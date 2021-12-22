@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="#ff0000"
+        android:padding="@dimen/liveness_10"
+        android:text="Demo 为了演示两种不同的授权方式，将 SDK 的初始化方法放到了 Activity 中\n但在实际集成时，我们建议您将初始化方法放到 Application 类中。"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/desc_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/liveness_accent_reverse"
+        app:layout_constraintBottom_toTopOf="@+id/key_type_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="请选择 SDK 的鉴权方式"
+        android:layout_marginBottom="@dimen/liveness_20"
+        android:textSize="@dimen/liveness_20"/>
+
+    <Button
+        android:id="@+id/key_type_button"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.9"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:padding="@dimen/liveness_10"
+        android:textColor="@color/liveness_primary_black_text_color"
+        android:background="@color/liveness_primary_btn_bg_color"
+        android:text="通过 AccessKey 和 SecretKey 进行鉴权"
+        app:layout_constraintBottom_toTopOf="@+id/ticket_type_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ticket_type_button"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.9"
+        android:layout_height="wrap_content"
+        android:text="通过一次性 ticket 鉴权"
+        android:textAllCaps="false"
+        android:textColor="@color/liveness_primary_black_text_color"
+        android:background="@color/liveness_primary_btn_bg_color"
+        android:layout_marginTop="@dimen/liveness_20"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/license_type_button"
+        app:layout_constraintTop_toBottomOf="@+id/key_type_button" />
+
+    <Button
+        android:id="@+id/license_type_button"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.9"
+        android:layout_height="wrap_content"
+        android:text="通过短期有效的 license 鉴权"
+        android:textAllCaps="false"
+        android:textColor="@color/liveness_primary_black_text_color"
+        android:background="@color/liveness_primary_btn_bg_color"
+        android:layout_marginTop="@dimen/liveness_20"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ticket_type_button" />
+</android.support.constraint.ConstraintLayout>
